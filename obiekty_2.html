@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Przycisk konfigurowalny</title>
+</head>
+<body>
+	<h1>Panel konfiguracyjny</h1>
+	<form>
+		<label for="buttonText">Tekst przycisku:</label>
+		<input type="text" id="buttonText" name="buttonText"><br>
+	<label for="buttonColor">Kolor przycisku:</label>
+	<input type="color" id="buttonColor" name="buttonColor"><br>
+
+	<label for="buttonSize">Rozmiar przycisku:</label>
+	<input type="number" id="buttonSize" name="buttonSize"><br>
+	<input type="button" value="Zapisz" onclick="updateButton()">
+
+</form>
+
+<h1>Przycisk</h1>
+<button id="myButton">Kliknij mnie</button>
+
+<script>
+	const myButton = document.getElementById("myButton");
+
+	function updateButton() {
+		const buttonText = document.getElementById("buttonText").value;
+		const buttonColor = document.getElementById("buttonColor").value;
+		const buttonSize = document.getElementById("buttonSize").value;
+
+		myButton.textContent = buttonText;
+		myButton.style.backgroundColor = buttonColor;
+		myButton.style.fontSize = `${buttonSize}px`;
+	}
+</script>
+</body>
+</html>
